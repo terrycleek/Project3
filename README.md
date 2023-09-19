@@ -30,7 +30,7 @@ In the realm of interactive entertainment, the dynamics of video game systems an
 
 ## Instructions
 1.Download Python
-  [Download Python Here](https://www.python.org/)
+  [Here](https://www.python.org/)
 ![Python Download Screen](https://docs.python.org/3/_images/win_installer.png)
 
 2. Check if Python Installed Properly
@@ -39,6 +39,8 @@ In the realm of interactive entertainment, the dynamics of video game systems an
    ```
    
 3. Download GIT
+    [Here](https://desktop.github.com/)
+![Github Download Screen](https://files.readme.io/fdd15c5-github1.png)
 
 
 4. Check if Github Installed Properly
