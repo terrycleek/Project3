@@ -24,8 +24,26 @@ In the realm of interactive entertainment, the dynamics of video game systems an
 ## Installation
 
 ## Instructions
-Download Python
-'''$brew install python'''
+1.Download Python
+[Python](https://www.python.org/)
+![Python Download Screen](/Users/terrycleek/Desktop/BootCamp/Project 3/Project3/PythonInstall.png)
+
+2. Check if Python Installed Properly
+ ```sh
+   python --version
+   ```
+   
+3. Download GIT
+
+
+4. Check if Github Installed Properly
+ ```sh
+   git --version
+   ```
+5. Clone Repository
+ ```sh
+   git clone https://github.com/terrycleek/Project3
+   ```
 
 
 ## Getting Started
