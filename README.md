@@ -39,9 +39,9 @@ In the realm of interactive entertainment, the dynamics of video game systems an
    ```
    
 3. Download GIT
-    [Here](https://desktop.github.com/)
-![Github Download Screen](https://files.readme.io/fdd15c5-github1.png)
-
+ ```sh
+   brew install git
+   ```
 
 4. Check if Github Installed Properly
  ```sh
@@ -63,6 +63,11 @@ In the realm of interactive entertainment, the dynamics of video game systems an
 ## Database 
 To be determined
 SQL, MongoDB, or SQLite
+
+## API
+IGDB Database
+
+link [Here](https://api-docs.igdb.com/#getting-started)
 
 ---
 ## Contributing
