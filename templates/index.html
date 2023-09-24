@@ -56,8 +56,16 @@
   <!-- Include Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+  <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+
   <!-- JavaScript code for charts and filter -->
   <script>
+
+    d3.json("http://127.0.0.1:5002/api/games").then(function(data){
+      console.log(data)
+    });
+
+
     // Sample data for bar chart
     const barChartData = {
       labels: ["Label 1", "Label 2", "Label 3"],
