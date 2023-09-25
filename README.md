@@ -78,46 +78,46 @@ SQLite
 
 ## API
 
-1. IGDB 
+### IGDB 
 
-    link [Here](https://api-docs.igdb.com/#getting-started)
+link [Here](https://api-docs.igdb.com/#getting-started)
 
-    Account Creation
+Account Creation
 
-    In order to use IGDB API, you must have a Twitch Account.
+In order to use IGDB API, you must have a Twitch Account.
 
-    ![Twitch SignUp](https://www.dummies.com/wp-content/uploads/twitch-channel-setup.jpg)
+![Twitch SignUp](https://www.dummies.com/wp-content/uploads/twitch-channel-setup.jpg)
 
 
-    *Sign Up with Twitch for a free account
-    *Ensure you have Two Factor Authentication enabled
-    *Register your application in the Twitch Developer Portal
-    *Manage your newly created application
-    *Generate a Client Secret by pressing New Secret
-    *Take note of the Client ID and Client Secret
+1. Sign Up with Twitch for a free account
+2. Ensure you have Two Factor Authentication enabled
+3. Register your application in the Twitch Developer Portal
+4. Manage your newly created application
+5. Generate a Client Secret by pressing New Secret
+6. Take note of the Client ID and Client Secret
 
-2. Steam Community Market
+### Steam Community Market
 
-    A. Create a Steam User Account
-    link [Here](https://store.steampowered.com/join)
-    ![Steam Create Acc](https://cdn.vcgamers.com/news/wp-content/uploads/2022/10/Cara-Bikin-Akun-Steam-Melalui-Client.png)
+Create a Steam User Account
+link [Here](https://store.steampowered.com/join)
+![Steam Create Acc](https://cdn.vcgamers.com/news/wp-content/uploads/2022/10/Cara-Bikin-Akun-Steam-Melalui-Client.png)
     
-    B. After creating Account copy down Steam ID #
-    ![Steam ID](https://gamertweak.com/wp-content/uploads/2022/06/how-to-locate-steam-id.jpg)
+After creating Account copy down Steam ID #
+![Steam ID](https://gamertweak.com/wp-content/uploads/2022/06/how-to-locate-steam-id.jpg)
     
-    *Open the Steam app on your PC or Mac.
-    *Sign into your account.
-    *Click on your Profile name at the top right section of the screen.
-    *Now click on Account Details.
-    *You should now see Your Usernames Account. Under that, there will be your Steam ID of 17 digits.
+1. Open the Steam app on your PC or Mac.
+2. Sign into your account.
+3. Click on your Profile name at the top right section of the screen.
+4. Now click on Account Details.
+5. You should now see Your Usernames Account. Under that, there will be your Steam ID of 17 digits.
     
-    C. See Steam Web Documentation. Link [Here](https://steamcommunity.com/dev)
+See Steam Web Documentation. Link [Here](https://steamcommunity.com/dev)
 
-    D. Register for Web API Key
-    link [Here](https://steamcommunity.com/dev/apikey)
+Register for Web API Key
+link [Here](https://steamcommunity.com/dev/apikey)
     
-    E. Use steamapi.xpaw. Link [Here](https://steamapi.xpaw.me/)
-    Fill out sheet and read documentation
+Use steamapi.xpaw. Link [Here](https://steamapi.xpaw.me/)
+Fill out sheet and read documentation
     
 
 ---
