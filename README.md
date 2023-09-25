@@ -19,7 +19,7 @@
 ## Project Description
 In the realm of interactive entertainment, the dynamics of video game systems and their corresponding sales have undergone significant transformations over the years. Harnessing the power of data analytics, this project endeavors to unearth invaluable insights into the evolving landscape of video game consumer preferences. By delving into historical sales data and emerging market trends, we aim to chart a data-driven course for the future of the video game industry, guiding developers and stakeholders towards informed decisions and innovative strategies that will shape the next generation of gaming experiences.
 
-Questions to Ask
+-**Questions to Ask**
 1. What pc game genre is gorwing the fastest?
 2. What is the most popular game genre out in the market?
 3. How does price of games affect long term playability?
@@ -29,26 +29,25 @@ Questions to Ask
 ## Installation and Instructions
 
 
-Download Python and the necessary Prerequisites
+-**Download Python and the necessary Prerequisites**
 Link [Here](https://www.python.org/)
 
 ![Python Download Screen](https://docs.python.org/3/_images/win_installer.png)
 
-Check if Python Installed Properly
+-Check if Python Installed Properly
  ```sh
    python --version
    ```
-Clone Working Repository
+-Clone Working Repository
  ```sh
    git clone https://github.com/terrycleek/Project3
    ```
-Install Javascript dependencies
+-Install Javascript dependencies
  ```sh
    npm install
    ```
    
 
-aa
 
 ---
 
@@ -81,23 +80,43 @@ Incorporating these diverse datasets allows us to paint a complete picture of th
 
 ---
 
+
 ## Getting Started
 
 ## Usage
 
+-**Navigate** to the project directory and run
+ ```sh
+   python app.py
+   ```
+   
+### Python Flask API
 
-## Datasets used
-Used Steam Charts DB datasets that were webscraped using Selenium
-Downloaded csv sheets from other online sources.
-Potentially using datasets obtained from API's
+This initializes a Python Flask web application that serves as the backend of our project. It includes the following components:
 
-1. Steam Charts DB
-  [Here](https://steamdb.info/charts/)
-![Web scrape Steamdb]
-Steam Web API
-steamapi.xpaw.me
+### Importing Libraries
 
-IGDB API
+- Imports the SQLite3 library for database operations.
+- Imports essential modules from Flask, a web framework in Python.
+
+
+### Route for the Website
+
+- Defines a route for the root URL ("/") that serves the website. When a user accesses the root URL, it renders the "index.html" template, creating the main webpage for the project.
+
+### API Endpoint for Retrieving Steam Data
+
+- Defines an API endpoint ("/api/games") that allows clients to retrieve Steam game data.
+- This function is executed when the "/api/games" endpoint is accessed. It performs the following tasks:
+    - Connects to an SQLite database named "steam_data.db."
+    - Executes an SQL query to fetch all game data from the "games" table in the database.
+    - Retrieves the fetched data and returns it as JSON, allowing clients to access the game data programmatically.
+
+
+
+This Python Flask API serves as the backend for our project, providing a website and an API endpoint for retrieving Steam game data stored in an SQLite database.
+
+
 
 ---
 ## Database 
@@ -130,11 +149,11 @@ The base URL for IGDB is: https://api.igdb.com/v4
 
 ### Steam Community Market
 
-Create a Steam User Account
+-**Create a Steam User Account**
 link [Here](https://store.steampowered.com/join)
 ![Steam Create Acc](https://cdn.vcgamers.com/news/wp-content/uploads/2022/10/Cara-Bikin-Akun-Steam-Melalui-Client.png)
     
-After creating Account copy down Steam ID #
+-**After creating Account copy down Steam ID #**
 ![Steam ID](https://gamertweak.com/wp-content/uploads/2022/06/how-to-locate-steam-id.jpg)
     
 1. Open the Steam app on your PC or Mac.
@@ -143,13 +162,14 @@ After creating Account copy down Steam ID #
 4. Now click on Account Details.
 5. You should now see Your Usernames Account. Under that, there will be your Steam ID of 17 digits.
     
-See Steam Web Documentation. Link [Here](https://steamcommunity.com/dev)
+-**See Steam Web Documentation** Link [Here](https://steamcommunity.com/dev)
 
-Register for Web API Key
+-**Register for Web API Key**
 link [Here](https://steamcommunity.com/dev/apikey)
     
-Use steamapi.xpaw. Link [Here](https://steamapi.xpaw.me/)
-Fill out sheet and read documentation
+-**Use steamapi.xpaw.** Link [Here](https://steamapi.xpaw.me/)
+
+-**Fill out sheet and read documentation**
     
 
 ---
