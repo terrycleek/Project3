@@ -20,7 +20,7 @@
 In the realm of interactive entertainment, the dynamics of PC video games and their corresponding sales have undergone significant transformations over the years. Harnessing the power of data analytics, this project endeavors to unearth invaluable insights into the evolving landscape of video game consumer preferences. By delving into historical sales data and emerging market trends, we aim to chart a data-driven course for the future of the PC video game industry, guiding developers and stakeholders towards informed decisions and innovative strategies that will shape the next generation of gaming experiences.
 
 -**Questions to Ask**
-1. What pc game genre is gorwing the fastest?
+1. What pc game genre is growing the fastest?
 2. What is the most popular game genre out in the market?
 3. How does price of games affect long term playability?
 
