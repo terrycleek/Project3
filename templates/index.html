@@ -20,14 +20,21 @@
   </style>
 </head>
 <body>
-  <h1>Steam Video Game Analysis Dashboard</h1>
+  <div class="container">
+    <!-- Add Jumbotron to header -->
+    <div class="jumbotron text-center">
+      <h1>PC Game Analysis </h1>
+      <!-- Add a button to activate loading page Fresh -->
+      <p><a class="btn btn-primary btn-lg" href="GET">Get fresh data</a></p>
+    </div>
 
   <!-- Dropdown menu for filters -->
   <label for="filterSelect">Select Filter:</label>
   <select id="filterSelect">
-    <option value="filter1">Filter 1</option>
-    <option value="filter2">Filter 2</option>
-    <option value="filter3">Filter 3</option>
+    <option value="current">Current Most Played</option>
+    <option value="Peak_All_Time">All Time Most Played</option>
+    <option value="genre">Top Genres</option>
+    <option value="topFreetoPlay">Top Free to Play</option>
     <!-- Add more options as needed -->
   </select>
 
@@ -62,85 +69,70 @@
   <script>
 
     d3.json("http://127.0.0.1:5002/api/games").then(function(data){
-      console.log(data)
+      // Call the update functions for each chart type
+      updateBarChart(data);
+      updatePolarChart(data);
+      updateBubbleChart(data);
+      updateRadarChart(data);
+      
+      //put charts here so they have access to data
+      console.log(data);
     });
 
+    // Function to update bar chart with data and annotations
+    function updateBarChart(data) {
+      const labels = data.map(game => game.Name);
+      const currentData = data.map(game => parseFloat(game.Current.replace(',', '')));
 
-    // Sample data for bar chart
-    const barChartData = {
-      labels: ["Label 1", "Label 2", "Label 3"],
-      datasets: [{
-        label: "Dataset 1",
-        data: [10, 20, 30],
-        backgroundColor: ["red", "blue", "green"],
-      }],
-    };
+      const barChartData = {
+        labels: labels,
+        datasets: [{
+          label: "Current Most Played",
+          data: currentData,
+          backgroundColor: ["red", "blue", "green"],
+        }],
+      };
 
-    // Create a bar chart
-    const barCtx = document.getElementById("barChart").getContext("2d");
-    const barChart = new Chart(barCtx, {
-      type: "bar",
-      data: barChartData,
-    });
+      const barCtx = document.getElementById("barChart").getContext("2d");
+      const barChart = new Chart(barCtx, {
+        type: "bar",
+        data: barChartData,
+        options: {
+          plugins: {
+            annotation: {
+              annotations: labels.map((label, index) => ({
+                type: "line",
+                mode: "vertical",
+                scaleID: "y-axis-0", // Corrected scaleID to match the y-axis
+                value: index,
+                borderColor: "rgba(255, 0, 0, 0.5)",
+                borderWidth: 1,
+                label: {
+                  content: label,
+                  enabled: true,
+                },
+              })),
+            },
+          },
+        },
+      });
+    }
 
-    // Sample data for polar chart
-    const polarChartData = {
-      labels: ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"],
-      datasets: [{
-          label: "Dataset 1",
-          data: [10, 20, 30, 40, 50],
-          backgroundColor: "rgba(255, 99, 132, 0.2)",
-          borderColor: "rgba(255, 99, 132, 1)",
-          borderWidth: 1,
-      }],
-    };
+    // Function to update polar chart with data and annotations
+    function updatePolarChart(data) {
+      // ... similar code as updateBarChart, but for the polar chart
+    }
 
-    // Create a polar chart
-    const polarCtx = document.getElementById("polarChart").getContext("2d");
-    const polarChart = new Chart(polarCtx, {
-      type: "polarArea",
-      data: polarChartData,
-    });
+    // Function to update bubble chart with data and annotations
+    function updateBubbleChart(data) {
+      // ... similar code as updateBarChart, but for the bubble chart
+    }
 
-    // Sample data for bubble chart
-    const bubbleChartData = {
-      datasets: [{
-          label: "Dataset 1",
-          data: [
-              { x: 10, y: 20, r: 5 },
-              { x: 30, y: 40, r: 10 },
-              { x: 50, y: 60, r: 8 },
-          ],
-          backgroundColor: "rgba(75, 192, 192, 0.2)",
-          borderColor: "rgba(75, 192, 192, 1)",
-          borderWidth: 1,
-      }],
-    };
+    // Function to update radar chart with data and annotations
+    function updateRadarChart(data) {
+      // ... similar code as updateBarChart, but for the radar chart
+    }
 
-    // Create a bubble chart
-    const bubbleCtx = document.getElementById("bubbleChart").getContext("2d");
-    const bubbleChart = new Chart(bubbleCtx, {
-      type: "bubble",
-      data: bubbleChartData,
-    });
-
-    // Sample data for radar chart
-    const radarChartData = {
-      labels: ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"],
-      datasets: [{
-          data: [10, 20, 30, 40, 50],
-          backgroundColor: "rgba(255, 99, 132, 0.2)",
-          borderColor: "rgba(255, 99, 132, 1)",
-          borderWidth: 1,
-      }],
-    };
-
-    // Create a radar chart
-    const radarCtx = document.getElementById("radarChart").getContext("2d");
-    const radarChart = new Chart(radarCtx, {
-      type: "radar",
-      data: radarChartData,
-    });
   </script>
 </body>
 </html>
