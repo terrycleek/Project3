@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>STEAM VIDEO GAME ANALYSIS</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.6">
+  <style type="text/css">
+    /* CSS to control layout */
+    .chart-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .chart {
+      flex: 1;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Add Jumbotron to header -->
+    <div class="jumbotron text-center">
+      <h1>PC Game Analysis </h1>
+      <!-- Add a button to activate loading page Fresh -->
+      <p><a class="btn btn-primary btn-lg" href="GET">Get fresh data</a></p>
+    </div>
+
+  <!-- Dropdown menu for filters -->
+  <label for="filterSelect">Select Filter:</label>
+  <select id="filterSelect">
+    <option value="current">Current Most Played</option>
+    <option value="Peak_All_Time">All Time Most Played</option>
+    <option value="genre">Top Genres</option>
+    <option value="topFreetoPlay">Top Free to Play</option>
+    <!-- Add more options as needed -->
+  </select>
+
+  <div class="chart-container">
+    <!-- Bar Chart -->
+    <div class="chart">
+
+ <div id="barChart"></div>
+    </div>
+
+    <!-- Polar Chart -->
+    <div class="chart">
+      <canvas id="polarChart"></canvas>
+    </div>
+
+    <!-- Bubble Chart -->
+    <div class="chart">
+      <canvas id="bubbleChart"></canvas>
+    </div>
+
+    <!-- Radar Chart -->
+    <div class="chart">
+      <canvas id="radarChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Include Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <!-- JavaScript code for charts and filter -->
+  <script>
+
+    d3.json("http://127.0.0.1:5002/api/games").then(function(data){
+      // Call the update functions for each chart type
+      updateBarChart(data);
+      updatePolarChart(data);
+      updateBubbleChart(data);
+      updateRadarChart(data);
+      
+      //put charts here so they have access to data
+      console.log(data);
+    });
+
+    // Function to update bar chart with data and annotations
+    function updateBarChart(data) {
+
+//console.log(data)
+
+let genre = []
+let genre_count = []
+
+Object.values(data).forEach(val => {
+  //console.log(val);
+val.forEach(async (value) => {
+  //console.log(value[0]);
+  genre.push(value[0])
+genre_count.push(value[1])
+});
+});
+
+console.log(genre);
+console.log(genre_count);
+
+
+
+
+var bardata = [
+  {
+    x: genre,
+    y: genre_count,
+    type: 'bar'
+  }
+];
+
+Plotly.newPlot('barChart', bardata);
+
+
+
+
+
+     
+    }
+
+    // Function to update polar chart with data and annotations
+    function updatePolarChart(data) {
+      // ... similar code as updateBarChart, but for the polar chart
+    }
+
+    // Function to update bubble chart with data and annotations
+    function updateBubbleChart(data) {
+      // ... similar code as updateBarChart, but for the bubble chart
+    }
+
+    // Function to update radar chart with data and annotations
+    function updateRadarChart(data) {
+      // ... similar code as updateBarChart, but for the radar chart
+    }
+
+  </script>
+</body>
+</html>
+
+
